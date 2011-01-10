@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
 int is_palendrome(int num) {
@@ -20,9 +19,7 @@ int main(int argc, char *argv[]) {
   int x; for(x = 999; x > 99; x--) {
     int y; for(y = x; y > 99; y--) {
       int prod = x * y;
-      if(prod > largest && is_palendrome(prod)) {
-        largest = prod;
-      }
+      if(prod > largest && is_palendrome(prod)) largest = prod;
     }
   }
 
