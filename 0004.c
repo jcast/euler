@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int is_palendrome(int num) {
   char num_str[7];
