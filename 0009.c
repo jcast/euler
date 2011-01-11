@@ -4,9 +4,9 @@
 static int SUM = 1000;
 
 int resolve_values(int a, int b, int *buff){
-  int c = sqrt(pow(a,2) + pow(b,2));
+  int c = SUM - a - b;
 
-  if(a + b + c != SUM || pow(c,2) != pow(a,2) + pow(b,2)) return 0;
+  if(pow(c,2) != pow(a,2) + pow(b,2)) return 0;
 
   buff[0] = a;
   buff[1] = b;
