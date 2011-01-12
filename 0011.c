@@ -1,16 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-static int mx, my = 20;
+#define MX 20
+#define MY 20
 
-void populate_matrix(int matrix[my][mx]) {
+void pop_matrix(int matrix[MY][MX]) {
   char *filename = "0011.txt";
   FILE *file     = fopen(filename, "r");
 
-  int cx, cy = 0;
-  char buff[2];
+  int cx = 0;
+  int cy = 0;
+  char buff[3];
+  buff[2] = 0;
 
   int i = 0;
-
   int c; while(c != EOF) {
     c = fgetc(file);
 
@@ -36,10 +39,9 @@ void populate_matrix(int matrix[my][mx]) {
   fclose(file);
 }
 
-
 int main(int argc, char *argv[]) {
-  int matrix[my][mx];
+  int matrix[MY][MX];
 
-  populate_matrix(matrix);
+  pop_matrix(matrix);
   return 0;
 }
