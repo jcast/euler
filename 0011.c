@@ -4,35 +4,24 @@
 #define MX 20
 #define MY 20
 
-void pop_matrix(int matrix[MY][MX]) {
-  char *filename = "0011.txt";
+void load_matrix(char *filename, int matrix[][MY]) {
+//  char *filename = "0011.txt";
   FILE *file     = fopen(filename, "r");
 
   int cx = 0;
   int cy = 0;
-  char buff[3];
-  buff[2] = 0;
 
-  int i = 0;
   int c; while(c != EOF) {
-    c = fgetc(file);
-
-    if(c == ' ') {
-      matrix[cy][cx] = atoi(buff);
-      //printf("%d\n", matrix[cy][cx]);
-      cx++;
-      i = 0;
-
-    } else if(c == '\n') {
-      matrix[cy][cx] = atoi(buff);
-      //printf("%d\n", matrix[cy][cx]);
-      cy++;
-      cx = 0;
-      i  = 0;
-
+    if( fscanf(file, "%2d", &(matrix[cy][cx])) > 0 ) {
+      printf("coord: x=%d", cx);
+      printf(" y=%d\n", cy);
+      c = fgetc(file);
+      switch(c) {
+      case ' ': cx++; break;
+      case '\n': cy++; cx = 0; break;
+      }
     } else {
-      buff[i] = c;
-      i++;
+      break;
     }
   }
 
@@ -42,6 +31,6 @@ void pop_matrix(int matrix[MY][MX]) {
 int main(int argc, char *argv[]) {
   int matrix[MY][MX];
 
-  pop_matrix(matrix);
+  load_matrix("0011.txt", matrix);
   return 0;
 }
