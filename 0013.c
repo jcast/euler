@@ -26,8 +26,8 @@ void load_matrix(char *filename, int matrix[MY][MX]) {
 }
 
 
-char * matrix_addition(int matrix[MY][MX]) {
-  char *num_str;
+int * matrix_addition(int matrix[MY][MX]) {
+  int *num_str;
 
   return num_str;
 }
