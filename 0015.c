@@ -11,7 +11,7 @@ n=1: 2    2
 n=2: 2    4    6
 n=3: 2    6   12   20
 n=4: 2    8   20   40   70
-n=5: 2   10   30   70  140   252
+n=5: 2   10   30   70  140  252
 
 From the above table we can infer the following formulas
 for any value of n:
