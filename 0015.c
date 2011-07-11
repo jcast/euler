@@ -25,7 +25,7 @@ Fn   = SUM(FnC1..FnCn)
 
 int main(int argc, int *argv) {
 
-  long a1[SIZE], a2[SIZE];
+  long a1[SIZE+1], a2[SIZE+1];
   long *pre = a1, *arr = a2, *tmp;
 
   long value;
