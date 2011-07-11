@@ -3,11 +3,24 @@
 #define SIZE 20
 
 /*
-Cn-4 = Fn-1 - 4(Fn-2)
-Cn-3 = Fn-1 - 3(Fn-2)
-Cn-2 = Fn-1 - 2(Fn-2)
-Cn-1 = Fn-1
-Cn   = 2(Fn-1)
+Observation for n=1 to n=5
+
+col  1    2    3    4    5    6
+
+n=1: 2    2
+n=2: 2    4    6
+n=3: 2    6   12   20
+n=4: 2    8   20   40   70
+n=5: 2   10   30   70  140   252
+
+From the above table we can infer the following formulas
+for any value of n:
+
+* let Fn be the number of paths for a given square
+* let FnCx be the value of a column of the square n
+
+FnCx = SUM(F(n-1)C1..F(n-1)Cx)
+Fn   = SUM(FnC1..FnCn)
 */
 
 int main(int argc, int *argv) {
